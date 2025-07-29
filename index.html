@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beautiful and user-friendly To-Do List application to help you stay organized">
+    <meta name="theme-color" content="#667eea">
+    <title>To-Do List | Stay Organized</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </h1>
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Add a new task..." autocomplete="off">
+            <input type="date" id="dueDateInput" class="due-date-input" aria-label="Due date">
+            <select id="priorityInput" class="priority-input" aria-label="Priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button id="addTask" aria-label="Add task">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+        <div class="progress-section">
+            <div class="progress-bar-bg">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <span id="progressText" class="progress-text"></span>
+        </div>
+        <div class="controls-section">
+            <div class="task-counters">
+                <span id="totalTasks">Total: 0</span>
+                <span id="activeTasks">Active: 0</span>
+                <span id="completedTasks">Completed: 0</span>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <button id="clearCompleted" class="clear-btn">Clear Completed</button>
+        </div>
+        <div class="search-section">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search tasks..." autocomplete="off">
+        </div>
+        <div class="tasks-section">
+            <ul id="taskList">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+        </div>
+        <div id="toast" class="toast"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
